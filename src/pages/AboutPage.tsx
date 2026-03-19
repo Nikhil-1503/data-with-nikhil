@@ -78,14 +78,16 @@ export default function AboutPage() {
             </h2>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://github.com/Nikhil-1503"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-lg border border-border px-5 py-3 font-mono text-sm transition-colors hover:border-primary hover:text-primary"
               >
                 <Github size={16} />
                 GitHub
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/nikhilshanbhag01/"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-lg border border-border px-5 py-3 font-mono text-sm transition-colors hover:border-primary hover:text-primary"
               >
                 <Linkedin size={16} />

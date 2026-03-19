@@ -10,9 +10,31 @@ import ArticleCard from "@/components/ArticleCard";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const normalizeText = (text: string) =>
+  text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, "")
+    .split(/\s+/);
+
+const getSimilarityScore = (a: string[], b: string[]) => {
+  const setA = new Set(a);
+  const setB = new Set(b);
+
+  let score = 0;
+
+  setA.forEach((word) => {
+    if (setB.has(word)) score++;
+  });
+
+  return score;
+};
+
 export default function ArticlePage() {
   const { id } = useParams();
-  const article = articles.find((a) => a.id === id);
+  const article = useMemo(
+  () => articles.find((a) => a.id === id),
+  [id]
+);
   const { scrollYProgress } = useScroll();
   const [linkCopied, setLinkCopied] = useState(false);
 
@@ -24,19 +46,28 @@ export default function ArticlePage() {
     [article]
   );
 
-  const related = useMemo(
-    () =>
-      article
-        ? articles
-            .filter(
-              (a) =>
-                a.id !== article.id &&
-                a.tags.some((t) => article.tags.includes(t))
-            )
-            .slice(0, 3)
-        : [],
-    [article]
+  const related = useMemo(() => {
+  if (!article) return [];
+
+  const currentContent = normalizeText(
+    `${article.title} ${article.description} ${article.tags.join(" ")}`
   );
+
+  return articles
+    .filter((a) => a.id !== article.id)
+    .map((a) => {
+      const compareContent = normalizeText(
+        `${a.title} ${a.description} ${a.tags.join(" ")}`
+      );
+
+      const score = getSimilarityScore(currentContent, compareContent);
+
+      return { ...a, score };
+    })
+    .filter((a) => a.score > 2) // threshold (tweakable)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3);
+}, [article]);
 
   const copyLink = () => {
     navigator.clipboard.writeText(window.location.href);
@@ -114,7 +145,7 @@ export default function ArticlePage() {
                 </span>
                 <button
                   onClick={copyLink}
-                  className="ml-auto flex items-center gap-1.5 rounded-md border border-border px-3 py-1 transition-colors hover:border-primary"
+                  className="ml-auto flex items-center gap-1.5 rounded-md border border-border px-3 py-1 transition-all hover:border-primary hover:bg-primary/5"
                 >
                   {linkCopied ? <Check size={12} /> : <LinkIcon size={12} />}
                   {linkCopied ? "Copied!" : "Copy link"}
@@ -122,7 +153,7 @@ export default function ArticlePage() {
               </div>
 
               {/* Content */}
-              <div className="prose-content">
+              <div className="prose-content max-w-none">
                 {article.content.map((section, i) => (
                   <ContentSection key={i} section={section} />
                 ))}
@@ -187,10 +218,10 @@ function ContentSection({ section }: { section: ArticleSection }) {
     }
     case "paragraph":
       return (
-        <p className="mb-4 leading-relaxed text-foreground/90">
+        <p className="mb-6 text-[15.5px] leading-7 text-foreground/90">
           {section.text}
         </p>
-      );
+       );
     case "code":
       return <CodeBlock code={section.text!} language={section.language} />;
     case "list":

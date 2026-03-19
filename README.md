@@ -23,12 +23,7 @@ This project is designed not just as a blog, but as a **learning platform and po
 
 ### 🔍 Search & Filter
 - Full-text search across articles
-- Multi-select filter by tools:
-  - PySpark
-  - SQL
-  - Azure Data Factory
-  - Airflow
-  - Snowflake
+- Multi-select filter by tools
 
 ### 💻 Developer-Friendly Content
 - Syntax-highlighted code snippets

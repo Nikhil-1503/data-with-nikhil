@@ -58,7 +58,9 @@
     --border: 28 10% 25%;
     --input: 28 10% 25%;
     --ring: 30 25% 62%;
-    --code-bg: 28 18% 8%;
+    /* --code-bg: 28 18% 8%; */
+    --code-bg: 28 14% 16%;
+    --border: 28 10% 28%;
 
     --sidebar-background: 28 16% 14%;
     --sidebar-foreground: 30 15% 90%;

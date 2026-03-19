@@ -11,31 +11,41 @@ interface Props {
 export default function ArticleCard({ article, index = 0 }: Props) {
   return (
     <motion.article
-      initial={{ opacity: 0, y: 10 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, delay: index * 0.05, ease: [0.2, 0.8, 0.2, 1] }}
+      transition={{ duration: 0.4, delay: index * 0.06, ease: [0.2, 0.8, 0.2, 1] }}
       className="group"
     >
       <Link
         to={`/article/${article.id}`}
-        className="flex h-full flex-col rounded-lg border border-border p-6 transition-all hover:-translate-y-0.5 hover:border-primary" 
+        className="relative flex h-full flex-col overflow-hidden rounded-xl border border-border bg-primary/5 p-6 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-xl hover:shadow-primary/10" 
       >
+      
+      {/* Top Accent */}
+        {/* <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-[#F0DCCA] to-[#F3E3D5] opacity-80 blur-[0.5px] group-hover:opacity-100" /> */}
+
+        {/* Tags */}
         <div className="mb-3 flex flex-wrap gap-2">
           {article.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-md bg-secondary px-2.5 py-1 font-mono text-xs text-secondary-foreground"
+              className="rounded-md border border-border bg-muted px-2.5 py-1 font-mono text-xs text-muted-foreground transition-colors group-hover:border-primary/50 group-hover:text-primary"
             >
               {tag}
             </span>
           ))}
         </div>
 
-        <h3 className="mb-2 font-display text-lg font-semibold leading-snug tracking-tight text-foreground transition-colors group-hover:text-primary">
+
+        <h3 className="mb-2 flex items-start justify-between gap-2 font-display text-lg font-semibold leading-snug tracking-tight text-foreground transition-colors group-hover:text-primary">
           {article.title}
+          <ArrowUpRight
+            size={16}
+            className="mt-1 shrink-0 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100"
+          />
         </h3>
 
-        <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">
+        <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-3">
           {article.description}
         </p>
 
@@ -44,7 +54,7 @@ export default function ArticleCard({ article, index = 0 }: Props) {
             <Clock size={12} />
             <span>{article.readingTime} min read</span>
           </div>
-          <span>{new Date(article.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
+          <span>{new Date(article.date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</span>
         </div>
       </Link>
     </motion.article>
