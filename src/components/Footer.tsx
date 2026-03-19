@@ -1,4 +1,4 @@
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Link} from "lucide-react";
 
 export default function Footer() {
   return (
@@ -21,6 +21,13 @@ export default function Footer() {
               className="group text-muted-foreground transition-all duration-200 hover:text-primary" 
               aria-label="LinkedIn">
             <Linkedin size={18} className="transition-transform duration-200 group-hover:scale-110"/>
+          </a>
+          <a 
+              href="https://nikhilshanbhag.netlify.app/" 
+              rel="noopener noreferrer"
+              className="group text-muted-foreground transition-all duration-200 hover:text-primary" 
+              aria-label="Website">
+            <Link size={18} className="transition-transform duration-200 group-hover:scale-110"/>
           </a>
         </div>
       </div>

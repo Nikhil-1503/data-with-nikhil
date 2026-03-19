@@ -1,4 +1,4 @@
-import { Github, Linkedin, Database, Cpu, GitBranch, Layers } from "lucide-react";
+import { Github, Linkedin, Link, Database, Cpu, GitBranch, Layers } from "lucide-react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -92,6 +92,14 @@ export default function AboutPage() {
               >
                 <Linkedin size={16} />
                 LinkedIn
+              </a>
+              <a
+                href="https://nikhilshanbhag.netlify.app/"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 rounded-lg border border-border px-5 py-3 font-mono text-sm transition-colors hover:border-primary hover:text-primary"
+              >
+                <Link size={16} />
+                Website
               </a>
             </div>
           </motion.div>
