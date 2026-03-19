@@ -35,11 +35,11 @@ export default function ArticleCard({ article, index = 0 }: Props) {
           {article.title}
         </h3>
 
-        <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+        <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">
           {article.description}
         </p>
 
-        <div className="flex items-center justify-between font-mono text-xs text-muted-foreground">
+        <div className="mt-auto flex items-center justify-between font-mono text-xs text-muted-foreground">
           <div className="flex items-center gap-1.5">
             <Clock size={12} />
             <span>{article.readingTime} min read</span>
