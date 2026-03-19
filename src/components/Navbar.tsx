@@ -27,7 +27,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link to="/" className="font-display text-lg font-bold tracking-tight">
-          pipeline<span className="text-primary">_</span>blog
+          data<span className="text-primary">_with_</span>nikhil
         </Link>
 
         {/* Desktop links */}

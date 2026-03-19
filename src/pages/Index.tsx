@@ -67,9 +67,7 @@ export default function Index() {
             transition={{ duration: 0.5, delay: 0.2, ease: [0.2, 0.8, 0.2, 1] }}
             className="max-w-[60ch] text-lg text-muted-foreground text-pretty md:text-xl"
           >
-            Technical deep-dives into PySpark optimization, SQL patterns, and
-            cloud-native data orchestration. Real-world examples from production
-            pipelines.
+            Ingest. Transform. Inspire.
           </motion.p>
         </div>
       </section>
