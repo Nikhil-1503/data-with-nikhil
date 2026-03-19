@@ -18,7 +18,7 @@ export default function ArticleCard({ article, index = 0 }: Props) {
     >
       <Link
         to={`/article/${article.id}`}
-        className="block rounded-lg border border-border p-6 transition-all hover:-translate-y-0.5 hover:border-primary"
+        className="flex h-full flex-col rounded-lg border border-border p-6 transition-all hover:-translate-y-0.5 hover:border-primary"
       >
         <div className="mb-3 flex flex-wrap gap-2">
           {article.tags.map((tag) => (
