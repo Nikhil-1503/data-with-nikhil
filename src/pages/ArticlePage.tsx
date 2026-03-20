@@ -143,6 +143,11 @@ export default function ArticlePage() {
                   <Clock size={12} />
                   {article.readingTime} min read
                 </span>
+                {article.difficulty && (
+                <span className="rounded bg-secondary px-2 py-1 text-xs">
+                  {article.difficulty}
+                </span>
+              )}
                 <button
                   onClick={copyLink}
                   className="ml-auto flex items-center gap-1.5 rounded-md border border-border px-3 py-1 transition-all hover:border-primary hover:bg-primary/5"

@@ -8,7 +8,7 @@ interface Props {
 
 export default function FilterBar({ tags, selected, onToggle }: Props) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-2 overflow-x-auto pb-2">
       <button
         onClick={() => selected.length > 0 && onToggle("__clear__")}
         className={`rounded-full border px-4 py-1.5 font-mono text-sm transition-colors ${
@@ -17,7 +17,7 @@ export default function FilterBar({ tags, selected, onToggle }: Props) {
             : "border-border text-muted-foreground hover:border-primary"
         }`}
       >
-        All
+        All {selected.length > 0 && `(${selected.length})`}
       </button>
       {tags.map((tag) => {
         const active = selected.includes(tag);

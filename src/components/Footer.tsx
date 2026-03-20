@@ -1,11 +1,11 @@
-import { Github, Linkedin, Link} from "lucide-react";
+import { Github, Linkedin, Link, Mail} from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-primary/15">
       <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 px-6 py-8 sm:flex-row sm:items-center">
         <p className="font-mono text-xs">
-          © {new Date().getFullYear()} data_wtih_nikhil. Built by Nikhil Shanbhag.
+          © {new Date().getFullYear()} data_with_nikhil. Built by Nikhil Shanbhag.
         </p>
         <div className="flex items-center gap-4">
           <a  
@@ -28,6 +28,13 @@ export default function Footer() {
               className="group text-muted-foreground transition-all duration-200 hover:text-primary" 
               aria-label="Website">
             <Link size={18} className="transition-transform duration-200 group-hover:scale-110"/>
+          </a>
+          <a 
+              href="mailto:nikhil.shanbhag1503@gmail.com" 
+              rel="noopener noreferrer"
+              className="group text-muted-foreground transition-all duration-200 hover:text-primary" 
+              aria-label="Email">
+            <Mail size={18} className="transition-transform duration-200 group-hover:scale-110"/>
           </a>
         </div>
       </div>

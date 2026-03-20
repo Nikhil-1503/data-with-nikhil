@@ -14,6 +14,15 @@ export default function Navbar() {
   const location = useLocation();
 
   useEffect(() => {
+  localStorage.setItem("theme", dark ? "dark" : "light");
+}, [dark]);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    if (saved === "dark") setDark(true);
+  }, []);
+
+  useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
 
@@ -36,7 +45,7 @@ export default function Navbar() {
             <Link
               key={l.to}
               to={l.to}
-              className={`font-mono text-sm transition-colors hover:text-primary ${
+              className={`relative font-mono text-sm transition-colors hover:text-primary after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full ${
                 location.pathname === l.to
                   ? "text-primary"
                   : "text-muted-foreground"

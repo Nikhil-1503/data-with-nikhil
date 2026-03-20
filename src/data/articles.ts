@@ -3,6 +3,8 @@ export interface Article {
   title: string;
   description: string;
   tags: string[];
+  difficulty?: "Beginner" | "Intermediate" | "Advanced";
+  slug?: string;
   readingTime: number;
   date: string;
   author: string;
@@ -27,9 +29,11 @@ export const articles: Article[] = [
     title: "Reducing Spark Shuffle Write by 42% with Custom Partitioning",
     description: "Deep dive into PySpark partitioning strategies that dramatically reduce shuffle overhead in large-scale ETL pipelines.",
     tags: ["PySpark", "Performance", "ETL"],
+    difficulty: "Advanced",
+    slug: "spark-shuffle-optimization",
     readingTime: 12,
     date: "2024-11-15",
-    author: "Alex Chen",
+    author: "Nikhil Shanbhag",
     featured: true,
     content: [
       { type: "heading", level: 2, text: "The Shuffle Problem" },

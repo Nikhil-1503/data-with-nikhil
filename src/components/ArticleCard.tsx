@@ -8,6 +8,13 @@ interface Props {
   index?: number;
 }
 
+const formatDate = (date: string) =>
+  new Intl.DateTimeFormat("en-IN", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  }).format(new Date(date));
+
 export default function ArticleCard({ article, index = 0 }: Props) {
   return (
     <motion.article
@@ -20,6 +27,11 @@ export default function ArticleCard({ article, index = 0 }: Props) {
         to={`/article/${article.id}`}
         className="relative flex h-full flex-col overflow-hidden rounded-xl border border-border bg-primary/5 p-6 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-xl hover:shadow-primary/10" 
       >
+      {/* {article.featured && (
+        <span className="absolute right-4 top-4 rounded bg-primary px-2 py-1 font-mono text-[10px] text-primary-foreground">
+          Featured
+        </span>
+      )} */}
       
       {/* Top Accent */}
         {/* <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-[#F0DCCA] to-[#F3E3D5] opacity-80 blur-[0.5px] group-hover:opacity-100" /> */}
@@ -34,6 +46,11 @@ export default function ArticleCard({ article, index = 0 }: Props) {
               {tag}
             </span>
           ))}
+          {/* {article.difficulty && (
+            <span className="mb-2 inline-block rounded bg-secondary px-2 py-1 text-[10px] font-mono text-secondary-foreground">
+              {article.difficulty}
+            </span>
+          )} */}
         </div>
 
 
@@ -54,7 +71,8 @@ export default function ArticleCard({ article, index = 0 }: Props) {
             <Clock size={12} />
             <span>{article.readingTime} min read</span>
           </div>
-          <span>{new Date(article.date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</span>
+          {/* <span>{new Date(article.date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</span> */}
+          <span>{formatDate(article.date)}</span>
         </div>
       </Link>
     </motion.article>

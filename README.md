@@ -10,6 +10,7 @@ This project is designed not just as a blog, but as a **learning platform and po
 
 ## 🌐 Live Demo
 
+https://datawithnikhil.netlify.app/
 
 ---
 

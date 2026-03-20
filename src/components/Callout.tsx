@@ -14,12 +14,12 @@ const config = {
   usecase: {
     icon: Briefcase,
     title: "Real-world Use Case",
-    className: "border-primary bg-primary/5",
+    className: "border-green-500 bg-green-500/10",
   },
   interview: {
     icon: HelpCircle,
     title: "Interview Question",
-    className: "border-accent bg-accent/5",
+    className: "border-yellow-500 bg-yellow-500/10",
   },
 };
 

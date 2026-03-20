@@ -69,8 +69,17 @@ export default function Index() {
           >
             Ingest. Transform. Inspire.
           </motion.p>
+          <div className="font-mono mt-6 flex gap-4">
+            <a href="/blog" className="rounded bg-primary px-5 py-2 text-sm text-primary-foreground">
+              Read Articles
+            </a>
+            <a href="/about" className="rounded border border-border px-5 py-2 text-sm text-primary hover:border-primary">
+              About Me
+            </a>
+          </div>
         </div>
       </section>
+
 
       {/* Search & Filters */}
       <section className="border-y border-border px-6 py-8">
