@@ -80,6 +80,7 @@ export default function AboutPage() {
               <a
                 href="https://github.com/Nikhil-1503"
                 rel="noopener noreferrer"
+                target="_blank"
                 className="flex items-center gap-2 rounded-lg border border-border px-5 py-3 font-mono text-sm transition-colors hover:border-primary hover:text-primary"
               >
                 <Github size={16} />
@@ -88,6 +89,7 @@ export default function AboutPage() {
               <a
                 href="https://www.linkedin.com/in/nikhilshanbhag01/"
                 rel="noopener noreferrer"
+                target="_blank"
                 className="flex items-center gap-2 rounded-lg border border-border px-5 py-3 font-mono text-sm transition-colors hover:border-primary hover:text-primary"
               >
                 <Linkedin size={16} />
@@ -96,6 +98,7 @@ export default function AboutPage() {
               <a
                 href="https://nikhilshanbhag.netlify.app/"
                 rel="noopener noreferrer"
+                target="_blank"
                 className="flex items-center gap-2 rounded-lg border border-border px-5 py-3 font-mono text-sm transition-colors hover:border-primary hover:text-primary"
               >
                 <Link size={16} />
