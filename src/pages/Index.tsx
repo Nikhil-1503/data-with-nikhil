@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { articles, allTags } from "@/data/articles";
 import ArticleCard from "@/components/ArticleCard";
@@ -70,12 +71,20 @@ export default function Index() {
             Ingest. Transform. Inspire.
           </motion.p>
           <div className="font-mono mt-6 flex gap-4">
-            <a href="/blog" className="rounded bg-primary px-5 py-2 text-sm text-primary-foreground">
+            {/* <a href="/blog" className="rounded bg-primary px-5 py-2 text-sm text-primary-foreground">
               Read Articles
             </a>
             <a href="/about" className="rounded border border-border px-5 py-2 text-sm text-primary hover:border-primary">
               About Me
-            </a>
+            </a> */}
+
+            <Link to="/blog" className="rounded bg-primary px-5 py-2 text-sm text-primary-foreground">
+              Read Articles
+            </Link>
+
+            <Link to="/about" className="rounded border border-border px-5 py-2 text-sm text-primary hover:border-primary">
+              About Me
+            </Link>
           </div>
         </div>
       </section>

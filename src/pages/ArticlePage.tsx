@@ -37,6 +37,7 @@ export default function ArticlePage() {
 );
   const { scrollYProgress } = useScroll();
   const [linkCopied, setLinkCopied] = useState(false);
+  const [activeId, setActiveId] = useState<string | null>(null);
 
   const headings = useMemo(
     () =>
@@ -45,6 +46,36 @@ export default function ArticlePage() {
         .map((s) => ({ text: s.text!, level: s.level!, id: s.text!.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "") })) || [],
     [article]
   );
+
+  useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveId(entry.target.id);
+        }
+      });
+    },
+    {
+      rootMargin: "-20% 0px -60% 0px", // controls when it activates
+      threshold: 0,
+    }
+  );
+
+  const elements = headings.map((h) =>
+    document.getElementById(h.id)
+  );
+
+  elements.forEach((el) => {
+    if (el) observer.observe(el);
+  });
+
+  return () => {
+    elements.forEach((el) => {
+      if (el) observer.unobserve(el);
+    });
+  };
+}, [headings]);
 
   const related = useMemo(() => {
   if (!article) return [];
@@ -101,9 +132,9 @@ export default function ArticlePage() {
 
       <article className="px-6 py-12">
         <div className="mx-auto max-w-7xl">
-          <div className="flex gap-16">
+          <div className="flex justify-between gap-8">
             {/* Main content */}
-            <div className="min-w-0 max-w-[65ch]">
+            <div className="min-w-0 flex-1 max-w-[75ch]">
               <Link
                 to="/blog"
                 className="mb-8 inline-flex items-center gap-1.5 font-mono text-sm text-muted-foreground transition-colors hover:text-primary"
@@ -181,7 +212,7 @@ export default function ArticlePage() {
 
             {/* Table of Contents - desktop */}
             <aside className="hidden w-64 shrink-0 xl:block">
-              <div className="sticky top-24">
+              <div className="sticky top-24 border-l border-border pl-6">
                 <h4 className="mb-4 font-display text-sm font-semibold uppercase tracking-wider text-muted-foreground">
                   On this page
                 </h4>
@@ -190,7 +221,12 @@ export default function ArticlePage() {
                     <a
                       key={h.id}
                       href={`#${h.id}`}
-                      className="font-mono text-xs text-muted-foreground transition-colors hover:text-primary"
+                      // className="font-mono text-xs text-muted-foreground transition-colors hover:text-primary"
+                      className={`font-mono text-xs transition-colors ${
+                        activeId === h.id
+                          ? "text-primary font-semibold"
+                          : "text-muted-foreground hover:text-primary"
+                      }`}
                     >
                       {h.text}
                     </a>
