@@ -76,7 +76,7 @@ export default function AboutPage() {
             <h2 className="mb-6 font-display text-2xl font-bold tracking-tight">
               Connect
             </h2>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-3">
               <a
                 href="https://github.com/Nikhil-1503"
                 rel="noopener noreferrer"

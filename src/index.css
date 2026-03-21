@@ -101,8 +101,15 @@
   code, pre {
     @apply font-mono;
   }
-  pre.shiki { background: transparent !important; margin: 0; padding: 0; } 
-  pre.shiki code { font-family: "JetBrains Mono", monospace; }
+  pre.shiki { 
+    background: transparent !important; 
+    margin: 0; 
+    padding: 0; 
+  } 
+  pre.shiki code { 
+    font-family: "JetBrains Mono", monospace; 
+  }
+  
 }
 
 @layer utilities {
