@@ -9,8 +9,14 @@ This project is designed not just as a blog, but as a **learning platform and po
 ---
 
 ## 🌐 Live Demo
-
 https://datawithnikhil.netlify.app/
+
+---
+
+## 📸 Preview
+
+![Home Preview](./public/images/home.png)
+![Article Preview](./public/images/article.png)
 
 ---
 
@@ -36,3 +42,16 @@ https://datawithnikhil.netlify.app/
 - Image support with captions
 
 ---
+
+🤝 Contributing
+
+Contributions, ideas, and feedback are always welcome!
+If you have suggestions for improving content or features, feel free to open an issue or connect.
+
+---
+
+⭐ Support
+
+If you found this project useful:
+- Give it a ⭐ on GitHub
+- Share it with fellow data engineers

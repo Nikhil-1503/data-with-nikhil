@@ -74,7 +74,7 @@ export const articles: Article[] = [
     tags: ["Azure Data Factory", "Delta Lake", "Architecture"],
     readingTime: 18,
     date: "2024-10-28",
-    author: "Alex Chen",
+    author: "Nikhil Shanbhag",
     featured: true,
     content: [
       { type: "heading", level: 2, text: "What is Medallion Architecture?" },
@@ -99,7 +99,7 @@ export const articles: Article[] = [
     tags: ["SQL", "Analytics"],
     readingTime: 15,
     date: "2024-10-10",
-    author: "Alex Chen",
+    author: "Nikhil Shanbhag",
     featured: true,
     content: [
       { type: "heading", level: 2, text: "Why Window Functions?" },
@@ -120,7 +120,7 @@ export const articles: Article[] = [
     tags: ["Airflow", "Orchestration", "Python"],
     readingTime: 14,
     date: "2024-09-20",
-    author: "Alex Chen",
+    author: "Nikhil Shanbhag",
     featured: false,
     content: [
       { type: "heading", level: 2, text: "Idempotent DAG Design" },
@@ -140,7 +140,7 @@ export const articles: Article[] = [
     tags: ["Snowflake", "SQL", "Performance"],
     readingTime: 11,
     date: "2024-09-05",
-    author: "Alex Chen",
+    author: "Nikhil Shanbhag",
     featured: false,
     content: [
       { type: "heading", level: 2, text: "Understanding Snowflake Credits" },
@@ -161,7 +161,7 @@ export const articles: Article[] = [
     tags: ["PySpark", "Testing", "Python"],
     readingTime: 13,
     date: "2024-08-22",
-    author: "Alex Chen",
+    author: "Nikhil Shanbhag",
     featured: false,
     content: [
       { type: "heading", level: 2, text: "Why Test Spark Code?" },
