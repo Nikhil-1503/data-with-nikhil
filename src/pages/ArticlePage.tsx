@@ -221,6 +221,7 @@ export default function ArticlePage() {
                     <a
                       key={h.id}
                       href={`#${h.id}`}
+                      onClick={() => setActiveId(h.id)}
                       // className="font-mono text-xs text-muted-foreground transition-colors hover:text-primary"
                       className={`font-mono text-xs transition-colors ${
                         activeId === h.id
@@ -228,6 +229,9 @@ export default function ArticlePage() {
                           : "text-muted-foreground hover:text-primary"
                       }`}
                     >
+                      {/* {activeId === h.id && (
+                        <span className="absolute left-0 top-1 h-3 w-[2px] bg-primary rounded-full" />
+                      )} */}
                       {h.text}
                     </a>
                   ))}
