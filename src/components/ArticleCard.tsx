@@ -51,6 +51,11 @@ export default function ArticleCard({ article, index = 0 }: Props) {
               {article.difficulty}
             </span>
           )} */}
+          {article.difficulty && (
+            <span className="rounded-md border border-border bg-primary/20 px-2.5 py-1 font-mono text-xs text-secondary-foreground transition-colors group-hover:border-primary/50 group-hover:text-primary">
+              {article.difficulty}
+            </span>
+          )}
         </div>
 
 

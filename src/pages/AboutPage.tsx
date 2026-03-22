@@ -31,20 +31,47 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="mb-12 space-y-4 leading-relaxed text-foreground/90"
+            className="mb-12 flex flex-col md:flex-row md:items-center md:gap-12"
           >
-            <p>
-              I'm a Data Engineer focused on building reliable, scalable data
-              pipelines. I work with PySpark, SQL, Azure Data Factory, and
-              Airflow to process terabytes of data daily for analytics and
-              machine learning workloads.
-            </p>
-            <p>
-              This blog is where I share the patterns, optimizations, and
-              lessons learned from production data systems. Every article
-              includes real-world examples, code you can copy, and interview
-              prep material.
-            </p>
+            {/* LEFT: TEXT */}
+            <div className="space-y-4 leading-relaxed text-foreground/90 md:flex-1">
+              <p>
+                I'm a Data Engineer focused on building reliable, scalable data
+                pipelines. I work with PySpark, SQL, Azure Data Factory, and
+                Airflow to process terabytes of data daily for analytics and
+                machine learning workloads.
+              </p>
+              <p>
+                This blog is where I share the patterns, optimizations, and
+                lessons learned from production data systems. Every article
+                includes real-world examples, code you can copy, and interview
+                prep material.
+              </p>
+            </div>
+
+            {/* RIGHT: IMAGE */}
+            <div className="mt-8 flex justify-center md:mt-0 md:justify-end">
+              <div className="relative group w-40 h-40 md:w-48 md:h-48 flex-shrink-0">
+                
+                {/* Border */}
+                <div className="absolute inset-0 border-2 border-primary rounded-xl 
+                  translate-x-3 translate-y-3 
+                  transition-all duration-300 
+                  group-hover:translate-x-1 group-hover:translate-y-1">
+                </div>
+
+                {/* Image */}
+                <img
+                  src="/images/profile.jpg"
+                  alt="Nikhil Shanbhag"
+                  className="relative z-10 w-full h-full object-cover rounded-xl
+                  transition-all duration-300 
+                  group-hover:-translate-x-1 group-hover:-translate-y-1 
+                  group-hover:scale-105 
+                  shadow-xl group-hover:shadow-primary/30"
+                />
+              </div>
+            </div>
           </motion.div>
 
           <motion.div

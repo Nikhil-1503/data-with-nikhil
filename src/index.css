@@ -101,13 +101,66 @@
   code, pre {
     @apply font-mono;
   }
-  pre.shiki { 
+  /* pre.shiki { 
     background: transparent !important; 
     margin: 0; 
     padding: 0; 
   } 
   pre.shiki code { 
     font-family: "JetBrains Mono", monospace; 
+  } */
+
+  /* Prism syntax highlighting - warm earthy theme */
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: hsl(30 12% 50%);
+    font-style: italic;
+  }
+  .token.punctuation {
+    color: hsl(30 15% 65%);
+  }
+  .token.property,
+  .token.tag,
+  .token.boolean,
+  .token.number,
+  .token.constant,
+  .token.symbol {
+    color: hsl(20 55% 60%);
+  }
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin {
+    color: hsl(40 50% 60%);
+  }
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string {
+    color: hsl(30 30% 65%);
+  }
+  .token.atrule,
+  .token.attr-value,
+  .token.keyword {
+    color: hsl(15 45% 65%);
+  }
+  .token.function,
+  .token.class-name {
+    color: hsl(35 60% 68%);
+  }
+  .token.regex,
+  .token.important,
+  .token.variable {
+    color: hsl(25 50% 62%);
+  }
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+    background: none;
   }
   
 }

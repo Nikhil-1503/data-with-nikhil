@@ -9,7 +9,7 @@ This project is designed not just as a blog, but as a **learning platform and po
 ---
 
 ## 🌐 Live Demo
-https://datawithnikhil.netlify.app/
+Link - https://datawithnikhil.netlify.app/
 
 ---
 
@@ -43,14 +43,14 @@ https://datawithnikhil.netlify.app/
 
 ---
 
-🤝 Contributing
+## 🤝 Contributing
 
 Contributions, ideas, and feedback are always welcome!
 If you have suggestions for improving content or features, feel free to open an issue or connect.
 
 ---
 
-⭐ Support
+## ⭐ Support
 
 If you found this project useful:
 - Give it a ⭐ on GitHub
