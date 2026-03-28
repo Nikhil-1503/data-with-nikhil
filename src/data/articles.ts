@@ -29,7 +29,7 @@ import {
   airflowBestPractices,
   snowflakeCostOptimization,
   pysparkTestingStrategies,
-} from "./content/index";
+} from "./content";
 
 export const articles: Article[] = [
   sparkShuffleOptimization,
