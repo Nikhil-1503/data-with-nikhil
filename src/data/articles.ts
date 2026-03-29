@@ -29,6 +29,7 @@ import {
   airflowBestPractices,
   snowflakeCostOptimization,
   pysparkTestingStrategies,
+  snowflakeFlattenNestedJson
 } from "./content";
 
 export const articles: Article[] = [
@@ -38,6 +39,7 @@ export const articles: Article[] = [
   airflowBestPractices,
   snowflakeCostOptimization,
   pysparkTestingStrategies,
+  snowflakeFlattenNestedJson
 ];
 
 export const allTags = [...new Set(articles.flatMap(a => a.tags))].sort();

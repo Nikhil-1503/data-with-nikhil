@@ -34,10 +34,27 @@ export default function CodeBlock({ code, language = "python" }: Props) {
   const prismLang = langMap[language.toLowerCase()] || "python";
   const grammar = Prism.languages[prismLang];
 
+  // const highlightedHTML = useMemo(() => {
+  //   if (!grammar) return code;
+    
+  //   return Prism.highlight(code, grammar, prismLang);
+  // }, [code, grammar, prismLang]);
+
+  const formattedCode = useMemo(() => {
+    if (prismLang === "json") {
+      try {
+        return JSON.stringify(JSON.parse(code), null, 2);
+      } catch {
+        return code;
+      }
+    }
+    return code;
+  }, [code, prismLang]);
+
   const highlightedHTML = useMemo(() => {
-    if (!grammar) return code;
-    return Prism.highlight(code, grammar, prismLang);
-  }, [code, grammar, prismLang]);
+    if (!grammar) return formattedCode;
+    return Prism.highlight(formattedCode, grammar, prismLang);
+  }, [formattedCode, grammar, prismLang]);
 
   const lines = highlightedHTML.split("\n");
 
@@ -75,7 +92,7 @@ export default function CodeBlock({ code, language = "python" }: Props) {
   // }, [code, language, isDark]);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(code);
+    navigator.clipboard.writeText(formattedCode);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };

@@ -4,3 +4,4 @@ export { sqlWindowFunctionsMastery } from "./03-sql-window-functions-mastery";
 export { airflowBestPractices } from "./04-airflow-best-practices";
 export { snowflakeCostOptimization } from "./05-snowflake-cost-optimization";
 export { pysparkTestingStrategies } from "./06-pyspark-testing-strategies";
+export { snowflakeFlattenNestedJson } from "./07-snowflake-flatten-nested-json";
